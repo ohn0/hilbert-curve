@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="hilbert_curve" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/hilbert_curve" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="C:/Users/Neel/glfw/include" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add directory="C:/Users/Neel/glfw/lib-mingw" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/hilbert_curve" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="C:/Users/Neel/glfw/include" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add directory="C:/Users/Neel/glfw/lib-mingw" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/Users/Neel/glfw/include" />
+			<Add directory="C:/Users/Neel/glew-1.13.0/include" />
+			<Add directory="D:/soil/Simple OpenGL Image Library/src" />
+		</Compiler>
+		<Linker>
+			<Add library="D:/soil/Simple OpenGL Image Library/lib/libSOIL.a" />
+			<Add library="glew32s" />
+			<Add library="libglfw3" />
+			<Add library="glfw3" />
+			<Add library="gdi32" />
+			<Add library="opengl32" />
+			<Add directory="C:/Users/Neel/glfw/lib-mingw" />
+			<Add directory="C:/Users/Neel/glew-1.13.0/bin" />
+			<Add directory="D:/soil/Simple OpenGL Image Library/src" />
+		</Linker>
+		<Unit filename="fragment1" />
+		<Unit filename="geometry1" />
+		<Unit filename="include/Shader.h" />
+		<Unit filename="openGL_template.cpp" />
+		<Unit filename="test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="vertex1" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

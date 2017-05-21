@@ -1,0 +1,77 @@
+#version 330 core
+layout(points) in;
+layout(line_strip, max_vertices = 1023) out;
+uniform float levelFloat;
+uniform int startDistance;
+vec2 d2xy(int, int);
+vec2 rot(int, vec2, int, int);
+float mapValue(float , float );
+void main()
+{
+    int level = int(levelFloat);
+    int maxDist = (level * level) - 1;
+    vec2 dCoords;
+    int endDistance = 0;
+    if(maxDist - startDistance < 1024){
+        endDistance = startDistance + (maxDist - startDistance);
+    }
+    else{
+        endDistance = startDistance + 1024;
+    }
+    for(int i = startDistance; i <= endDistance; i++){
+        dCoords = d2xy(level,i);
+        dCoords.x = mapValue(float(dCoords.x), float(level));
+        dCoords.y = mapValue(float(dCoords.y), float(level));
+        gl_Position = gl_in[0].gl_Position + vec4(float(dCoords.x), float(dCoords.y), 0.0, 0.0);
+        EmitVertex();
+
+    }
+        EndPrimitive();
+
+}
+
+vec2 d2xy(int n, int d)
+{
+    vec2 dCoords;
+    dCoords.x = dCoords.y = 0;
+    int rx, ry, s, t;
+    t = d;
+    int x,y;
+    x = y =0;
+    for(s = 1; s < n ; s *= 2){
+        rx = int(1) & (t/2);
+        ry = int(1) & (t ^ rx);
+        dCoords = rot(s,dCoords,rx,ry);
+        dCoords.x += (s * rx);
+        dCoords.y += (s * ry);
+        t/=4;
+    }
+
+    return dCoords;
+}
+
+vec2 rot(int n,vec2 dCoords, int rx, int ry){
+    if(ry == 0){
+        if(rx == 1){
+            dCoords.x = n-1 - dCoords.x;
+            dCoords.y = n-1 - dCoords.y;
+        }
+
+    int t = int(dCoords.x);
+    dCoords.x = dCoords.y;
+    dCoords.y = t;
+    }
+    return dCoords;
+}
+
+float mapValue(float n, float level){
+    if(n < ((level-1)/2)){
+        return (n/((level-1)/2))-.9999999999;
+    }else if((n - ((level-1)/2)) < 1e-08){
+        return 0;
+    }else{
+        return ((n - ((level-1)/2))/((level-1)/2))-.00000000009;
+    }
+}
+
+

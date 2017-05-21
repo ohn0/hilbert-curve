@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1495316151 source:c:\users\neel\opengl\hilbert curve\opengl_template.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<iostream>
+	<cmath>
+	<random>
+	"Shader.h"
+
+1459023783 c:\users\neel\glew-1.13.0\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<Availability.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1459023395 c:\users\neel\glfw\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1486912028 d:\soil\simple opengl image library\src\soil.h
+
+1495042676 c:\users\neel\opengl\hilbert curve\include\shader.h
+	<string>
+	<fstream>
+	<sstream>
+	<iostream>
+	<GL/glew.h>
+
